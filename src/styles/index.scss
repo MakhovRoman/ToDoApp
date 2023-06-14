@@ -1,0 +1,21 @@
+@import 'normalize-scss';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,500&display=swap');
+
+@import './colors';
+@import './constants.scss';
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: $bgc-app;
+}
+
+.wrapper {
+  max-width: 1170px;
+  margin: 0 auto;
+
+  @extend %flex-column-center;
+}
+
+.content {
+  width: 75%;
+}

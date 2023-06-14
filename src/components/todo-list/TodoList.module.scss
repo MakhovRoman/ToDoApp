@@ -1,0 +1,16 @@
+@import '../../styles/colors.scss';
+@import '../../styles/constants.scss';
+
+.todoList {
+  width: 100%;
+  min-height: 100px;
+  background-color: $bgc-todo-list;
+
+  @extend %flex-column-center-center;
+
+  &_empty {
+    background-color: $no-to-do;
+    padding: 5px 10px;
+    border-radius: 10px;
+  }
+}

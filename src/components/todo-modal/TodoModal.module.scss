@@ -1,0 +1,18 @@
+@import '../../styles/colors.scss';
+@import '../../styles/constants.scss';
+
+.dialog {
+  &_wrapper {
+    min-width: 500px;
+  }
+
+  &_content {
+    @extend %flex-column;
+    padding-top: 20px;
+  }
+
+  &_cancel {
+    background-color: $bgc-button-cancel !important;
+    margin-left: 30px !important;
+  }
+}

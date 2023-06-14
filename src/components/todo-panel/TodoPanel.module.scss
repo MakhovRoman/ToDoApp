@@ -1,0 +1,7 @@
+@import '../../styles/constants.scss';
+
+.todoPanel {
+  margin-bottom: 30px;
+  width: 100%;
+  @extend %flex-space-between;
+}
