@@ -3,15 +3,17 @@ import CloseIcon from '@mui/icons-material/Close';
 import React, { useState, ChangeEvent } from 'react';
 
 import styles from './TodoModal.module.scss';
-import { todoItemStatus } from '../../typings/typings';
+import { TtodoItemStatus } from '../../typings/typings';
 import { useDispatch, useSelector } from 'react-redux';
 import { addTodo } from '../../store/slices/todoListSlice';
 import { RootState } from '../../store/store';
 import { setModalOpen } from '../../store/slices/modalSlice';
 
 export const TodoModal: React.FC = () => {
-  const [todoStatus, setTodoStatus] = useState(todoItemStatus.INCOMPLETE);
+  const [todoStatus, setTodoStatus] = useState(TtodoItemStatus.INCOMPLETE);
   const [title, setTitle] = useState('');
+  const [id, setId] = useState(0);
+
   const [disabled, setDisabled] = useState(true);
 
   const isOpen = useSelector((state: RootState) => state.setModalOpen.isOpen);
@@ -22,8 +24,8 @@ export const TodoModal: React.FC = () => {
     dispatch(setModalOpen(!isOpen));
   }
 
-  const handleChangeSelect = (event: SelectChangeEvent<todoItemStatus>) => {
-    setTodoStatus(event.target.value as todoItemStatus);
+  const handleChangeSelect = (event: SelectChangeEvent<TtodoItemStatus>) => {
+    setTodoStatus(event.target.value as TtodoItemStatus);
   }
 
   const handleChangeTitle = (event: ChangeEvent<HTMLInputElement>) => {
@@ -35,12 +37,15 @@ export const TodoModal: React.FC = () => {
   }
 
   const handleSubmit = () => {
-    const result = {title, todoStatus}
+    const result = {title, todoStatus, id}
 
     dispatch(addTodo(result));
     dispatch(setModalOpen(!isOpen));
 
     setTitle('');
+
+    const step = id + 1;
+    setId(step);
   }
 
   return (
@@ -81,8 +86,8 @@ export const TodoModal: React.FC = () => {
                 marginTop: '50px'
               }}
             >
-              <MenuItem value={todoItemStatus.COMPLETE}>Complete</MenuItem>
-              <MenuItem value={todoItemStatus.INCOMPLETE}>Incomplete</MenuItem>
+              <MenuItem value={TtodoItemStatus.COMPLETE}>Complete</MenuItem>
+              <MenuItem value={TtodoItemStatus.INCOMPLETE}>Incomplete</MenuItem>
             </Select>
           </form>
           <Stack

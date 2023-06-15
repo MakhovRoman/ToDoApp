@@ -4,6 +4,11 @@
   display: flex;
 }
 
+%flex-center {
+  @extend %flex;
+  align-items: center;
+}
+
 %flex-space-between {
   @extend %flex;
   justify-content: space-between;

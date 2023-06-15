@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { TtodoSelect } from '../../typings/typings';
+import { TodoSelect } from '../../typings/typings';
 
 export const todoSelectSlice = createSlice({
   name: "todoSelect",
   initialState: {
-    select: TtodoSelect.ALL
+    select: TodoSelect.ALL
   },
   reducers: {
     setSelect: (state, action) => {

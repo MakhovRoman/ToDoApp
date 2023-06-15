@@ -2,7 +2,7 @@ import { Button, MenuItem, Select, SelectChangeEvent } from '@mui/material';
 import React, { useState } from 'react';
 
 import styles from './TodoPanel.module.scss';
-import { TtodoSelect, todoItemStatus } from '../../typings/typings';
+import { TodoSelect, TtodoItemStatus } from '../../typings/typings';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import { setSelect } from '../../store/slices/todoSelectSlice';
@@ -36,9 +36,9 @@ export const TodoPanel: React.FC = () => {
           minWidth: 130
         }}
       >
-        <MenuItem value={TtodoSelect.ALL}>All</MenuItem>
-        <MenuItem value={TtodoSelect.INCOMPLETE}>Incomplete</MenuItem>
-        <MenuItem value={TtodoSelect.COMPLETE}>Complete</MenuItem>
+        <MenuItem value={TodoSelect.ALL}>All</MenuItem>
+        <MenuItem value={TodoSelect.INCOMPLETE}>Incomplete</MenuItem>
+        <MenuItem value={TodoSelect.COMPLETE}>Complete</MenuItem>
       </Select>
     </div>
   )

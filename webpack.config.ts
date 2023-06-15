@@ -31,6 +31,10 @@ module.exports = {
           {loader: "css-loader", options: {sourceMap: true}},
           {loader: "sass-loader", options: {sourceMap: true}}
         ]
+      },
+      {
+        test: /\.svg$/i,
+        type: 'asset/resource',
       }
     ]
   },

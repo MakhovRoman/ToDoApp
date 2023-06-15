@@ -1,0 +1,43 @@
+@import '../../styles/constants.scss';
+@import '../../styles/colors.scss';
+
+.TtodoItem {
+  width: 100%;
+  background-color: $bgc-todo-item;
+  @extend %flex;
+
+  padding: 15px;
+  box-sizing: border-box;
+
+  & + & {
+    margin-top: 30px;
+  }
+
+  &_icon {
+    width: 32px;
+    height: 32px;
+
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+
+    cursor: pointer;
+  }
+
+  &_delete {
+    margin-left: auto;
+  }
+
+  &_title {
+    @extend %flex-center;
+    margin-left: 15px;
+
+    font-size: 18px;
+
+    &_complete {
+      text-decoration: line-through;
+      color: $todo-title-complete;
+    }
+  }
+}
