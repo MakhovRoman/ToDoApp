@@ -1,5 +1,4 @@
-import React from 'react';
-import 'styles/index.scss';
+import '@styles/index.scss';
 import { TodoList } from '../todo-list/TodoList';
 import { TodoPanel } from '../todo-panel/TodoPanel';
 import { TodoModal } from '../todo-modal/TodoModal';

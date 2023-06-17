@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "webpack-dev-server --open --mode development --hot"
+    "dev": "webpack serve --open --config webpack.dev.js",
+    "start": "node server.js",
+    "build": "webpack --config webpack.prod.js"
   },
   "alias": {
     "@": "./src",
@@ -36,6 +38,7 @@
     "@types/redux-mock-store": "^1.0.3",
     "babel-jest": "^29.5.0",
     "babel-loader": "^9.1.2",
+    "clean-webpack-plugin": "^4.0.0",
     "clsx": "^1.2.1",
     "css-loader": "^6.8.1",
     "dart-sass": "^1.25.0",
@@ -43,9 +46,8 @@
     "html-webpack-plugin": "^5.5.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.5.0",
-    "jest-css-modules-transform": "^4.4.2",
     "jest-environment-jsdom": "^29.5.0",
-    "jest-transform-stub": "^2.0.0",
+    "mini-css-extract-plugin": "^2.7.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.1.0",
@@ -60,13 +62,14 @@
     "ts-node": "^10.9.1",
     "typescript": "^5.1.3",
     "webpack": "^5.86.0",
-    "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.15.1"
+    "webpack-cli": "^5.1.4"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.11.16",
-    "@mui/material": "^5.13.5"
+    "@mui/material": "^5.13.5",
+    "express": "^4.18.2",
+    "webpack-merge": "^5.9.0"
   }
 }

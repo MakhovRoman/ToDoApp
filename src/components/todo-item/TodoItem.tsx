@@ -27,12 +27,14 @@ export const TodoItem: React.FC<TtodoItem> = (props) => {
         onClick={handleChangeStatus}
       >
         {
+          <img src={
             props.todoStatus === TtodoItemStatus.COMPLETE
             ?
-            <CheckMark />
+            CheckMark
             :
-            <CheckBlack />
-          }
+            CheckBlack
+          } alt="" />
+        }
       </div>
       <div className={clsx(
         styles.TtodoItem_title,
@@ -43,7 +45,7 @@ export const TodoItem: React.FC<TtodoItem> = (props) => {
       <div className={clsx(styles.TtodoItem_icon, styles.TtodoItem_delete)}
         onClick={handleDeleteTodo}
       >
-        <Delete />
+        <img src={Delete} alt="delete" />
       </div>
     </div>
   )
