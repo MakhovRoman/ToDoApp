@@ -1,5 +1,5 @@
-import { Dispatch, SetStateAction } from "react";
-import { TSelectVal, TodoSelect, TtodoItem } from "../typings/typings";
+import { Dispatch } from "react";
+import { TSelectVal, TodoSelect, TtodoItem } from "@typings/typings";
 
 export const switchActualList = (
   select: TSelectVal,

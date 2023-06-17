@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { TodoSelect } from '../../typings/typings';
+import { TodoSelect } from '@typings/typings';
 
 export const todoSelectSlice = createSlice({
   name: "todoSelect",

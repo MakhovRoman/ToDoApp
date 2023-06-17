@@ -1,4 +1,4 @@
-import { TtodoItem } from "../typings/typings";
+import { TtodoItem } from "@typings/typings";
 
 type TAction = {
   payload: any;

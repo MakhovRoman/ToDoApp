@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import styles from './TodoList.module.scss';
 
 import { useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
-import { TodoItem } from '../todo-item/TodoItem';
-import { switchActualList } from '../../utils/switchFilteredList';
+import { RootState } from '@store/store';
+import { TodoItem } from '@components/todo-item/TodoItem';
+import { switchActualList } from '@utils/switchFilteredList';
 
-export const TodoList: React.FC = () => {
+export const TodoList = () => {
   const todoList = useSelector((state: RootState) => state.todoList.todoList);
   const todoSelect = useSelector((state: RootState) => state.todoSelect.select);
 

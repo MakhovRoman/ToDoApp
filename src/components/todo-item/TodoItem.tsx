@@ -1,14 +1,14 @@
 import React from 'react';
 import styles from './TodoItem.module.scss';
 
-import CheckMark from '../../assets/check-mark.svg';
-import CheckBlack from '../../assets/check-blank.svg'
-import Delete from '../../assets/delete.svg';
+import CheckMark from '@assets/check-mark.svg';
+import CheckBlack from '@assets/check-blank.svg'
+import Delete from '@assets/delete.svg';
 
-import { TtodoItem, TtodoItemStatus } from '../../typings/typings';
+import { TtodoItem, TtodoItemStatus } from '@typings/typings';
 import clsx from 'clsx';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeTodoStatus, removeTodo } from '../../store/slices/todoListSlice';
+import { changeTodoStatus, removeTodo } from '@store/slices/todoListSlice';
 
 export const TodoItem: React.FC<TtodoItem> = (props) => {
   const dispatch = useDispatch();
@@ -26,16 +26,13 @@ export const TodoItem: React.FC<TtodoItem> = (props) => {
       <div className={styles.TtodoItem_icon}
         onClick={handleChangeStatus}
       >
-        <img
-          src={
+        {
             props.todoStatus === TtodoItemStatus.COMPLETE
             ?
-            CheckMark
+            <CheckMark />
             :
-            CheckBlack
+            <CheckBlack />
           }
-          alt="check"
-        />
       </div>
       <div className={clsx(
         styles.TtodoItem_title,
@@ -46,7 +43,7 @@ export const TodoItem: React.FC<TtodoItem> = (props) => {
       <div className={clsx(styles.TtodoItem_icon, styles.TtodoItem_delete)}
         onClick={handleDeleteTodo}
       >
-        <img src={Delete} alt="delete" />
+        <Delete />
       </div>
     </div>
   )

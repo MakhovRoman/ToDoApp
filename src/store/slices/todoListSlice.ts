@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { TtodoItem, TtodoItemStatus } from '../../typings/typings';
-import { findTodo } from '../../utils/findTodo';
+import { TtodoItem, TtodoItemStatus } from '@typings/typings';
+import { findTodo } from '@utils/findTodo';
 
 const initialList: Array<TtodoItem> = [];
 

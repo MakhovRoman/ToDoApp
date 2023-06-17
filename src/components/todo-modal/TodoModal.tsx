@@ -5,9 +5,9 @@ import React, { useState, ChangeEvent } from 'react';
 import styles from './TodoModal.module.scss';
 import { TtodoItemStatus } from '../../typings/typings';
 import { useDispatch, useSelector } from 'react-redux';
-import { addTodo } from '../../store/slices/todoListSlice';
-import { RootState } from '../../store/store';
-import { setModalOpen } from '../../store/slices/modalSlice';
+import { addTodo } from '@store/slices/todoListSlice';
+import { RootState } from '@store/store';
+import { setModalOpen } from '@store/slices/modalSlice';
 
 export const TodoModal: React.FC = () => {
   const [todoStatus, setTodoStatus] = useState(TtodoItemStatus.INCOMPLETE);
@@ -78,6 +78,7 @@ export const TodoModal: React.FC = () => {
               variant='outlined'
               value={title}
               onChange={handleChangeTitle}
+              inputProps={{"data-testid": "modal-input"}}
             />
             <Select
               value={todoStatus}
