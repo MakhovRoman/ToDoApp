@@ -5,6 +5,7 @@ module.exports = {
   setupFilesAfterEnv: ['<rootDir>/src/__tests__/setUpTests.ts'],
   testMatch: ["<rootDir>/src/**/*.test.{ts,tsx}"],
   transform: {
+    "\\.(css|scss)$": "jest-css-modules-transform",
     "^.+\\.svg$": "<rootDir>/__mocks__/svgTransform.js"
   },
   moduleNameMapper: {
